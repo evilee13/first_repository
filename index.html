@@ -3,68 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Calculator</title>
-    <style>
-        h1{
-            font-size: 120%;
-            text-align:center;
-            color:blue;
-        }
-        body { font-size: 30px;
-        }
-        button {
-            border: 3px solid black;
-            width: 100px;
-            height: 50px;
-            color: black;
-            background-color: white;
-            padding: 10px;
-            margin: 30px;
-            border-radius: 5px;
-            font-size: 30px;
-            text-align: center;
-        }
-        .resultat {
-            border: 1px solid black;
-            width:200px;
-            height: 25px;
-            color:black;
-            background-color: white;
-            padding: 10px;
-            margin: 30px auto;
-            font-size: 30px;
-            text-align: center;
-        }
-        .chislo {
-            border: 1px solid black;
-            width:200px;
-            height: 25px;
-            color:black;
-            background-color: white;
-            padding: 10px;
-            margin: 30px;
-            font-size: 25px;
-        }
-        .chislo2 {
-            border: 1px solid black;
-            width:200px;
-            height: 25px;
-            color:black;
-            background-color: white;
-            padding: 10px;
-            margin: 30px;
-            font-size: 25px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="forCalc.css"/>
 </head>
 <body>
 <H1>Простой калькулятор</H1>
-<table style="text-align:center;"align="center">
+<table class="tb">
     <tr>
         <td>
-            <p> Число 1 <input class="chislo" type="text" id= "numb1"></p>
+            <p> Число 1 <label for="numb1"></label><input class="chislo" type="text" id="numb1"></p>
         </td>
         <td>
-            <p> Число 2 <input class= "chislo2" type="text" id= "numb2"></p>
+            <p> Число 2 <label for="numb2"></label><input class="chislo2" type="text" id="numb2"></p>
         </td>
     </tr>
     <tr>
@@ -83,36 +32,46 @@
 </table>
 <script>
     'use strict';
-let num1;
-let num2;
-let result= document.getElementById('result');
-function plus (){
-    num1=document.getElementById('numb1').value;
-    num1=parseInt(num1)
-    num2=document.getElementById('numb2').value;
-    num2=parseInt(num2)
-    result.innerHTML=num1+num2;
-}
-    function minus (){
-        num1=document.getElementById('numb1').value;
-        num1=parseInt(num1)
-        num2=document.getElementById('numb2').value;
-        num2=parseInt(num2)
-        result.innerHTML=num1-num2;
+    let num1 = document.querySelector('#numb1');
+    let num2 = document.querySelector('#numb2');
+    let regExFunc = function (event) {
+        let regex = /[^\d.]+/;
+        event.target.value = event.target.value.replace(regex, '');
+    };
+    num1.oninput = regExFunc;
+    num2.oninput = regExFunc
+    let result = document.getElementById('result');
+
+    function plus() {
+        num1 = document.getElementById('numb1').value;
+        num1 = parseFloat(num1)
+        num2 = document.getElementById('numb2').value;
+        num2 = parseFloat(num2)
+        result.innerHTML = num1 + num2;
     }
-    function multiplication (){
-        num1=document.getElementById('numb1').value;
-        num1=parseInt(num1)
-        num2=document.getElementById('numb2').value;
-        num2=parseInt(num2)
-        result.innerHTML=num1*num2;
+
+    function minus() {
+        num1 = document.getElementById('numb1').value;
+        num1 = parseFloat(num1)
+        num2 = document.getElementById('numb2').value;
+        num2 = parseFloat(num2)
+        result.innerHTML = num1 - num2;
     }
-    function division (){
-        num1=document.getElementById('numb1').value;
-        num1=parseInt(num1)
-        num2=document.getElementById('numb2').value;
-        num2=parseInt(num2)
-        result.innerHTML=num1/num2;
+
+    function multiplication() {
+        num1 = document.getElementById('numb1').value;
+        num1 = parseFloat(num1)
+        num2 = document.getElementById('numb2').value;
+        num2 = parseFloat(num2)
+        result.innerHTML = num1 * num2;
+    }
+
+    function division() {
+        num1 = document.getElementById('numb1').value;
+        num1 = parseFloat(num1)
+        num2 = document.getElementById('numb2').value;
+        num2 = parseFloat(num2)
+        result.innerHTML = num1 / num2;
     }
 </script>
 </body>

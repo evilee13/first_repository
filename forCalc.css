@@ -1,0 +1,56 @@
+body {
+    font-size: 30px;
+}
+.tb {
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+H1 {
+    font-size: 120%;
+    text-align: center;
+    color: blue;
+}
+button {
+    border: 3px solid black;
+    width: 100px;
+    height: 50px;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    margin: 30px;
+    border-radius: 5px;
+    font-size: 30px;
+    text-align: center;
+}
+.resultat {
+    border: 1px solid black;
+    width: 200px;
+    height: 25px;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    margin: 30px auto;
+    font-size: 30px;
+    text-align: center;
+}
+.chislo {
+    border: 1px solid black;
+    width: 200px;
+    height: 25px;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    margin: 30px;
+    font-size: 25px;
+}
+.chislo2 {
+    border: 1px solid black;
+    width: 200px;
+    height: 25px;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    margin: 30px;
+    font-size: 25px;
+}
